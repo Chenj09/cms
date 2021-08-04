@@ -13,11 +13,14 @@ class CJRequest {
   interceptors?: CJRequestInterceptors
   showLoading: boolean
   loading?: ILoadingInstance
+  data?: any
 
   constructor(config: CJRequestConfig) {
     this.instance = axios.create(config)
     this.interceptors = config.interceptors
     this.showLoading = config.showLoading ?? DEFAULT_LOADING
+    this.data = config?.data
+
     //对应实例的拦截器
     this.instance.interceptors.request.use(
       this.interceptors?.requestInterceptor,
@@ -73,7 +76,7 @@ class CJRequest {
     )
   }
 
-  request<T>(config: CJRequestConfig): Promise<T> {
+  request<T>(config: CJRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       //单个请求的拦截
       if (config.interceptors?.requestInterceptor) {
@@ -103,19 +106,19 @@ class CJRequest {
     })
   }
 
-  get<T>(config: CJRequestConfig): Promise<T> {
+  get<T>(config: CJRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'GET' })
   }
 
-  post<T>(config: CJRequestConfig): Promise<T> {
+  post<T>(config: CJRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'POST' })
   }
 
-  delete<T>(config: CJRequestConfig): Promise<T> {
+  delete<T>(config: CJRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'DELETE' })
   }
 
-  patch<T>(config: CJRequestConfig): Promise<T> {
+  patch<T>(config: CJRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'PATCH' })
   }
 }

@@ -4,6 +4,7 @@ import { TIME_OUT, BASE_URL } from './request/config'
 const cjRequest = new CJRequest({
   baseURL: BASE_URL,
   timeout: TIME_OUT,
+  data: '',
   interceptors: {
     requestInterceptor: (config) => {
       //携带token

@@ -8,7 +8,28 @@ import {
   ElFormItem,
   ElInput,
   ElLink,
-  ElCheckbox
+  ElCheckbox,
+  ElContainer,
+  ElAside,
+  ElHeader,
+  ElMain,
+  ElMenu,
+  ElMenuItem,
+  ElSubmenu,
+  ElMenuItemGroup,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElAvatar,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTable,
+  ElTableColumn
 } from 'element-plus'
 import type { App } from 'vue'
 const components = [
@@ -19,7 +40,28 @@ const components = [
   ElFormItem,
   ElInput,
   ElLink,
-  ElCheckbox
+  ElCheckbox,
+  ElContainer,
+  ElAside,
+  ElHeader,
+  ElMain,
+  ElMenu,
+  ElMenuItem,
+  ElSubmenu,
+  ElMenuItemGroup,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElAvatar,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTable,
+  ElTableColumn
 ]
 
 export default function (app: App): void {
